@@ -1,0 +1,360 @@
+/* ============================================================
+   GameSir G7 Pro Aimlabs — GamePadViewer Custom Skin V2
+   Reference artwork: 420 x 326 px
+   All PNG files must stay in the same public folder as this CSS.
+   ============================================================ */
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 420px !important;
+  height: 326px !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+/* ---------- BASE ---------- */
+
+.controller.custom {
+  position: relative !important;
+  width: 420px !important;
+  height: 326px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: url("./base.png") 0 0 / 420px 326px no-repeat !important;
+  overflow: visible !important;
+  transform-origin: 0 0;
+}
+
+/* Keep only the supplied base image when disconnected */
+.custom.disconnected {
+  opacity: .35;
+}
+
+.custom.disconnected div {
+  display: none !important;
+}
+
+/* Hide elements not used by this skin */
+.custom .quadrant,
+.custom .meta,
+.custom .touchpad,
+.custom .button-guide,
+.custom .player,
+.custom .p0,
+.custom .p1,
+.custom .p2,
+.custom .p3 {
+  background: none !important;
+}
+
+/* ============================================================
+   TRIGGERS — LT / RT
+   GamePadViewer controls trigger travel by changing opacity
+   inline, so the base rule MUST remain opacity: 0.
+   ============================================================ */
+
+.custom .triggers {
+  position: absolute !important;
+  left: 106px !important;
+  top: 19px !important;
+  width: 208px !important;
+  height: 76px !important;
+  pointer-events: none;
+}
+
+.custom .trigger {
+  width: 54px !important;
+  height: 74px !important;
+  opacity: 0; /* GPV changes this value inline according to trigger travel */
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 54px 74px !important;
+}
+
+.custom .trigger.left {
+  float: left !important;
+  background-image: url("./lt_pressed.png") !important;
+}
+
+.custom .trigger.right {
+  float: right !important;
+  background-image: url("./rt_pressed.png") !important;
+}
+
+/* Digital fallback, where supported by the GPV template */
+.custom .trigger-button.left,
+.custom .trigger-button.right {
+  position: absolute;
+  width: 54px;
+  height: 74px;
+  opacity: 0;
+}
+
+.custom .trigger-button.left.pressed,
+.custom .trigger-button.right.pressed {
+  opacity: 1;
+}
+
+/* ============================================================
+   BUMPERS — LB / RB
+   ============================================================ */
+
+.custom .bumpers {
+  position: absolute !important;
+  left: 87px !important;
+  top: 76px !important;
+  width: 246px !important;
+  height: 31px !important;
+  pointer-events: none;
+}
+
+.custom .bumper {
+  width: 82px !important;
+  height: 30px !important;
+  opacity: 0;
+  border: 0 !important;
+  margin: 0 !important;
+  background-position: center !important;
+  background-size: 82px 30px !important;
+  background-repeat: no-repeat !important;
+}
+
+.custom .bumper.left {
+  float: left !important;
+  background-image: url("./lb_pressed.png") !important;
+}
+
+.custom .bumper.right {
+  float: right !important;
+  background-image: url("./rb_pressed.png") !important;
+}
+
+.custom .bumper.pressed {
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   VIEW / MENU
+   ============================================================ */
+
+.custom .arrows {
+  position: absolute !important;
+  left: 165px !important;
+  top: 108px !important;
+  width: 97px !important;
+  height: 29px !important;
+  pointer-events: none;
+}
+
+.custom .back,
+.custom .start {
+  width: 28px !important;
+  height: 28px !important;
+  opacity: 0;
+  margin: 0 !important;
+  border: 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 28px 28px !important;
+}
+
+.custom .back {
+  float: left !important;
+  background-image: url("./view_pressed.png") !important;
+}
+
+.custom .start {
+  float: right !important;
+  background-image: url("./menu_pressed.png") !important;
+}
+
+.custom .back.pressed,
+.custom .start.pressed {
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   ABXY
+   ============================================================ */
+
+.custom .abxy {
+  position: absolute !important;
+  left: 264px !important;
+  top: 111px !important;
+  width: 80px !important;
+  height: 83px !important;
+  pointer-events: none;
+}
+
+.custom .button {
+  position: absolute !important;
+  width: 34px !important;
+  height: 34px !important;
+  opacity: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 34px 34px !important;
+}
+
+/* Use both selector variants for compatibility with GPV skins */
+.custom .a,
+.custom .button.a {
+  left: 23px !important;
+  top: 51px !important;
+  background-image: url("./button_a_pressed.png") !important;
+}
+
+.custom .b,
+.custom .button.b {
+  left: 50px !important;
+  top: 24px !important;
+  background-image: url("./button_b_pressed.png") !important;
+}
+
+.custom .x,
+.custom .button.x {
+  left: -4px !important;
+  top: 24px !important;
+  background-image: url("./button_x_pressed.png") !important;
+}
+
+.custom .y,
+.custom .button.y {
+  left: 23px !important;
+  top: -3px !important;
+  background-image: url("./button_y_pressed.png") !important;
+}
+
+.custom .button.pressed,
+.custom .a.pressed,
+.custom .b.pressed,
+.custom .x.pressed,
+.custom .y.pressed {
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   ANALOG STICKS
+   Important: do not apply transform here.
+   GPV may write movement/rotation inline.
+   ============================================================ */
+
+.custom .sticks {
+  position: absolute !important;
+  left: 97px !important;
+  top: 119px !important;
+  width: 198px !important;
+  height: 145px !important;
+  pointer-events: none;
+}
+
+.custom .stick {
+  position: absolute !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent center / 64px 64px no-repeat !important;
+}
+
+/*
+   Base positions are inside the .sticks container.
+   No transform declaration is used, so inline GPV stick movement survives.
+*/
+.custom .stick.left {
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.custom .stick.right {
+  left: 134px !important;
+  top: 79px !important;
+}
+
+.custom .stick.left.pressed {
+  background-image: url("./stick_left_pressed.png") !important;
+}
+
+.custom .stick.right.pressed {
+  background-image: url("./stick_right_pressed.png") !important;
+}
+
+/* ============================================================
+   D-PAD
+   ============================================================ */
+
+.custom .dpad {
+  position: absolute !important;
+  left: 142px !important;
+  top: 181px !important;
+  width: 60px !important;
+  height: 60px !important;
+  pointer-events: none;
+}
+
+.custom .face {
+  position: absolute !important;
+  opacity: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.custom .face.up {
+  left: 15px !important;
+  top: 0 !important;
+  width: 30px !important;
+  height: 22px !important;
+  background-image: url("./dpad_up_pressed.png") !important;
+  background-size: 30px 22px !important;
+}
+
+.custom .face.down {
+  left: 15px !important;
+  top: 38px !important;
+  width: 30px !important;
+  height: 22px !important;
+  background-image: url("./dpad_down_pressed.png") !important;
+  background-size: 30px 22px !important;
+}
+
+.custom .face.left {
+  left: 0 !important;
+  top: 15px !important;
+  width: 22px !important;
+  height: 30px !important;
+  background-image: url("./dpad_left_pressed.png") !important;
+  background-size: 22px 30px !important;
+}
+
+.custom .face.right {
+  left: 38px !important;
+  top: 15px !important;
+  width: 22px !important;
+  height: 30px !important;
+  background-image: url("./dpad_right_pressed.png") !important;
+  background-size: 22px 30px !important;
+}
+
+.custom .face.pressed {
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   OPTIONAL OBS SCALING
+   Do NOT enable unless your Browser Source is sized accordingly.
+   Example:
+     .controller.custom { transform: scale(1.5); }
+     html, body { width:630px !important; height:489px !important; }
+   ============================================================ */
